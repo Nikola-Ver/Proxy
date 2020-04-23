@@ -31,8 +31,13 @@ server.on("connection", (clientToProxy) => {
         "./records of visited sites.txt",
         `Дата: ${new Date()}\nURL: ${urls.pop()}\nURL сервера: ${serverURL}\nОтвет: ${ACCESS_DENIED}\n\n`
       );
-
-      const rejectHTML = await fs.readFile("./reject.html");
+      let deniedPage;
+      if (Math.random() > 0.5) {
+        deniedPage = "./reject.html";
+      } else {
+        deniedPage = "./reject hotline.html";
+      }
+      const rejectHTML = await fs.readFile(deniedPage);
       clientToProxy.write(ACCESS_DENIED);
       clientToProxy.write(rejectHTML);
       clientToProxy.end();
