@@ -1,0 +1,70 @@
+Дата: Thu Apr 23 2020 19:21:28 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/
+URL сервера: www.example.com
+Ответ: HTTP/1.1 200 OK
+
+Дата: Thu Apr 23 2020 19:21:29 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/favicon.ico
+URL сервера: www.example.com
+Ответ: HTTP/1.1 404 Not Found
+
+Дата: Thu Apr 23 2020 19:21:39 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/
+URL сервера: www.example.com
+Ответ: HTTP/1.1 200 OK
+
+Дата: Thu Apr 23 2020 19:21:40 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/favicon.ico
+URL сервера: www.example.com
+Ответ: HTTP/1.1 404 Not Found
+
+Дата: Thu Apr 23 2020 19:21:42 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/
+URL сервера: www.example.com
+Ответ: HTTP/1.1 403 Forbidden
+
+Дата: Thu Apr 23 2020 19:21:43 GMT+0300 (GMT+03:00)
+URL: http://ocsp.digicert.com/MFEwTzBNMEswSTAJBgUrDgMCGgUABBRJ9L2KGL92BpjF3kAtaDtxauTmhgQUPdNQpdagre7zSmAKZdMh1Pj41g8CEAblg20XjDYvMdklb%2BSFKGs%3D
+URL сервера: ocsp.digicert.com
+Ответ: HTTP/1.1 200 OK
+
+Дата: Thu Apr 23 2020 19:21:45 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/favicon.ico
+URL сервера: www.example.com
+Ответ: HTTP/1.1 403 Forbidden
+
+Дата: Thu Apr 23 2020 19:22:26 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/
+URL сервера: www.example.com
+Ответ: HTTP/1.1 403 Forbidden
+
+Дата: Thu Apr 23 2020 19:22:29 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/favicon.ico
+URL сервера: www.example.com
+Ответ: HTTP/1.1 403 Forbidden
+
+Дата: Thu Apr 23 2020 19:22:58 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/
+URL сервера: www.example.com
+Ответ: HTTP/1.1 403 Forbidden
+
+Дата: Thu Apr 23 2020 19:23:00 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/favicon.ico
+URL сервера: www.example.com
+Ответ: HTTP/1.1 403 Forbidden
+
+Дата: Thu Apr 23 2020 19:24:04 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/
+URL сервера: www.example.com
+Ответ: HTTP/1.1 403 Forbidden
+
+Дата: Thu Apr 23 2020 19:24:05 GMT+0300 (GMT+03:00)
+URL: http://www.example.com/favicon.ico
+URL сервера: www.example.com
+Ответ: HTTP/1.1 403 Forbidden
+
+Дата: Thu Apr 23 2020 19:24:22 GMT+0300 (GMT+03:00)
+URL: http://g.msn.com/1ewenusBingServiceTest/BSvcUpdater1.0.6.0
+URL сервера: g.msn.com
+Ответ: HTTP/1.1 302 Found
+
