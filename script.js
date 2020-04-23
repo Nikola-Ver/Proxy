@@ -1,11 +1,11 @@
 console.error = () => {};
-const net = require("net");
-const fs = require("fs").promises;
+const net = require("net"),
+  fs = require("fs").promises;
 
-const bannedServers = require("./banned servers.json");
-const server = net.createServer();
-const PORT = 3000;
-const ACCESS_DENIED = "HTTP/1.1 403 Forbidden";
+const bannedServers = require("./banned servers.json"),
+  server = net.createServer(),
+  PORT = 3000,
+  ACCESS_DENIED = "HTTP/1.1 403 Forbidden";
 
 function getServerURL(data) {
   return /(?<=Host: ).*$/m.exec(data.toString())[0];
