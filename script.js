@@ -1,4 +1,3 @@
-console.error = () => {};
 const net = require("net"),
   fs = require("fs").promises;
 
@@ -8,10 +7,16 @@ const bannedServers = require("./banned servers.json"),
   ACCESS_DENIED = "HTTP/1.1 403 Forbidden";
 
 function getServerURL(data) {
-  return /(?<=Host: ).*$/m.exec(data.toString())[0];
+  return /(?<=Host: )[^\:\r\n]*/m.exec(data.toString())[0];
+}
+
+function getPort(data) {
+  const port = /(?<=:).*/m.exec(/(?<=Host: ).*/m.exec(data.toString())[0]);
+  return port === null ? 80 : Number(port[0]);
 }
 
 function getURL(data) {
+  console.log(/http:\/\/[^ ]*/m.exec(data.toString())[0]);
   return /http:\/\/[^ ]*/m.exec(data.toString())[0];
 }
 
@@ -21,11 +26,9 @@ server.listen(PORT, () => {
 
 server.on("connection", (clientToProxy) => {
   const urls = [];
-
   clientToProxy.on("data", async (data) => {
     urls.push(getURL(data));
     const serverURL = getServerURL(data);
-
     if (bannedServers.includes(serverURL)) {
       fs.appendFile(
         "./records of visited sites.txt",
@@ -42,20 +45,22 @@ server.on("connection", (clientToProxy) => {
       clientToProxy.write(rejectHTML);
       clientToProxy.end();
     } else {
-      const DEFAULT_HTTP_PORT = 80;
+      const httpPort = getPort(data);
       const proxyToServer = net.createConnection(
         {
           host: serverURL,
-          port: DEFAULT_HTTP_PORT,
+          port: httpPort,
         },
         async () => {
+          data = data.toString().replace(/(?<=^GET )http:\/\/[^/]*/, "");
           proxyToServer.write(data);
           proxyToServer.pipe(clientToProxy);
         }
       );
 
       proxyToServer.on("data", async (data) => {
-        const response = /HTTP.*$/m.exec(data.toString())[0];
+        let response = /HTTP.*$/m.exec(data.toString());
+        response = response !== null ? response[0] : "HTTP/1.1";
         fs.appendFile(
           "./records of visited sites.txt",
           `Дата: ${new Date()}\nURL: ${urls.pop()}\nURL сервера: ${serverURL}\nОтвет: ${response}\n\n`
