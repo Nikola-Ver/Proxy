@@ -8,6 +8,6 @@
 - View what time and what sites the user visited;
 - Block web pages.
 
-## To view the list of visited sites by a user, open the file "records of visited sites" ("records of visited sites.txt")
+### To view the list of visited sites by a user, open the file "records of visited sites" ("records of visited sites.txt")
 
-## To block a web page, add it to "banned servers" ("banned servers.json")
+### To block a web page, add it to "banned servers" ("banned servers.json")
